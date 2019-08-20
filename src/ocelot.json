@@ -1,0 +1,28 @@
+{
+    "ReRoutes": [
+      {
+         "UpstreamPathTemplate": "/api/nginx",
+         "UpstreamHttpMethod": [ "Get" ],
+         "DownstreamPathTemplate": "/",
+         "DownstreamScheme": "http",
+         "DownstreamHostAndPorts": [
+            {
+              "Host": "nginx",
+              "Port": 80
+            }
+        ]
+      },
+      {
+         "UpstreamPathTemplate": "/api/hello",
+         "UpstreamHttpMethod": [ "Get" ],
+         "DownstreamPathTemplate": "/",
+         "DownstreamScheme": "http",
+         "DownstreamHostAndPorts": [
+            {
+              "Host": "hello",
+              "Port": 5678
+            }
+        ]
+      }
+    ]
+}

@@ -1,0 +1,21 @@
+version: '3.4'
+
+services:
+
+  nginx:
+    image: nginx
+  
+  hello:
+    image: hashicorp/http-echo
+    command: ["-text", "hello world"]
+    ports:
+      - 5678:5678
+
+  api.gateway:
+    build: .
+    ports:
+    - target: 5000
+      published: 5000
+      protocol: tcp
+      mode: host
+
